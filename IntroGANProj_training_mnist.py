@@ -5,7 +5,7 @@ from keras.layers import LeakyReLU
 from keras.models import Sequential, Model
 from keras.optimizers import Adam
 import matplotlib.pyplot as plt
-import numpy as py
+import numpy as np
 
 img_rows = 28
 img_cols = 28
@@ -71,9 +71,6 @@ def train(epochs, batch_size=128, save_interval=50):
 
     for epoch in range(epochs):
 
-        # ---------------------
-        #  Train Discriminator
-        # ---------------------
 
         # Select a random half batch of real images
         idx = np.random.randint(0, X_train.shape[0], half_batch)
@@ -95,15 +92,9 @@ def train(epochs, batch_size=128, save_interval=50):
 
         noise = np.random.normal(0, 1, (batch_size, 100)) 
 
-        # The generator wants the discriminator to label the generated samples
-        # as valid (ones)
-        #This is where the genrator is trying to trick discriminator into believing
-        #the generated image is true (hence value of 1 for y)
         valid_y = np.array([1] * batch_size) #Creates an array of all ones of size=batch size
 
-        # Generator is part of combined where it got directly linked with the discriminator
         # Train the generator with noise as x and 1 as y. 
-        # Again, 1 as the output as it is adversarial and if generator did a great
         #job of folling the discriminator then the output would be 1 (true)
         g_loss = combined.train_on_batch(noise, valid_y)
 
