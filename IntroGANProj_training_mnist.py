@@ -143,7 +143,7 @@ combined = Model(z, valid)
 combined.compile(loss='binary_crossentropy', optimizer=optimizer)
 
 
-train(epochs=100, batch_size=32, save_interval=10)
+train(epochs=100000, batch_size=32, save_interval=10)
 
 generator.save('generator_model.h5')  #Test the model on GAN4_predict...
 #Change epochs back to 30K
