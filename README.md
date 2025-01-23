@@ -5,7 +5,7 @@ An introductory Generative Adversarial Network (GAN) project designed to underst
 ---
 
 ## Overview  
-The goal of this project is to train a simple GAN to generate realistic grayscale images of handwritten digits from random latent vectors. This project served as a stepping stone for understanding GAN architecture, training processes, and their applications before moving on to more advanced GAN projects like **SRGANProject**.
+The goal of this project is to train a simple GAN to generate realistic grayscale images of handwritten digits from random latent vectors. This project served as a stepping stone for understanding GAN architecture, training processes, and their applications before moving on to more advanced GAN projects.
 
 ---
 
